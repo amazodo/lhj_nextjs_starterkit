@@ -4,7 +4,6 @@ import * as React from "react"
 import { useTheme } from "next-themes"
 import { Sun, Moon, Monitor } from "lucide-react"
 
-import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -23,17 +22,19 @@ function ThemeToggle() {
   }, [])
 
   if (!mounted) {
-    return <Button variant="ghost" size="icon" disabled />
+    return (
+      <div className="inline-flex h-8 px-2.5 items-center justify-center" aria-disabled="true">
+        <span className="sr-only">테마 로딩 중</span>
+      </div>
+    )
   }
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
-        <Button variant="ghost" size="icon">
-          <Sun className="size-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-          <Moon className="absolute size-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-          <span className="sr-only">테마 전환</span>
-        </Button>
+        <Sun className="size-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+        <Moon className="absolute size-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+        <span className="sr-only">테마 전환</span>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuItem onClick={() => setTheme("light")}>

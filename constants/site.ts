@@ -16,6 +16,10 @@ export const siteConfig: SiteConfig = {
       label: "기술 스택",
       href: "#tech-stack",
     },
+    {
+      label: "예제",
+      href: "/examples",
+    },
   ],
 }
 

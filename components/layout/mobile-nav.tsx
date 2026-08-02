@@ -5,7 +5,6 @@ import Link from "next/link"
 import { Menu } from "lucide-react"
 import { useMediaQuery } from "usehooks-ts"
 
-import { Button } from "@/components/ui/button"
 import {
   Sheet,
   SheetContent,
@@ -29,11 +28,9 @@ function MobileNav() {
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
-      <SheetTrigger>
-        <Button variant="ghost" size="icon" className="md:hidden">
-          <Menu className="size-5" />
-          <span className="sr-only">메뉴</span>
-        </Button>
+      <SheetTrigger className="md:hidden">
+        <Menu className="size-5" />
+        <span className="sr-only">메뉴</span>
       </SheetTrigger>
       <SheetContent side="left" className="w-[240px]">
         <SheetHeader>
