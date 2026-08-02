@@ -44,5 +44,6 @@ next-env.d.ts
 .claude/*
 !.claude/commands/
 !.claude/agents/
+!.claude/hooks/
 .mcp.json
 .playwright-mcp/

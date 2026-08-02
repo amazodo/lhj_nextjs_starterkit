@@ -1,0 +1,58 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:ui.shadcn.com)",
+      "Bash(npm install *)",
+      "Bash(npx shadcn *)",
+      "Bash(npm run *)",
+      "Bash(npx eslint *)",
+      "Bash(curl -s http://localhost:3000)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "mcp__playwright",
+      "Bash(timeout 10 bash -c \"cd 'C:\\\\\\\\Users\\\\\\\\User\\\\\\\\workspace\\\\\\\\courses\\\\\\\\claude-nextjs-starterkit' && npm run dev\")",
+      "Bash(git reset *)",
+      "Bash(git commit -m '프로젝트 개발 가이드 CLAUDE.md 추가 *)",
+      "Bash(gh auth *)",
+      "PowerShell(gh auth *)",
+      "Bash(git branch *)",
+      "Bash(git remote *)",
+      "Bash(git push *)",
+      "Bash(git commit -m '프로젝트 README 작성 *)",
+      "Bash(git commit -m '로컬 개발 환경 설정 파일을 .gitignore에 추가 *)",
+      "Skill(code_review)",
+      "WebSearch",
+      "WebFetch(domain:core.telegram.org)",
+      "WebFetch(domain:docs.claude.com)",
+      "Bash(git commit -m '🔔 feat: Claude Code 훅 + 텔레그램 알림 통합 *)"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "playwright"
+  ],
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "permission_prompt",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .claude/hooks/notify-telegram.cjs permission"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .claude/hooks/notify-telegram.cjs complete"
+          }
+        ]
+      }
+    ]
+  }
+}
