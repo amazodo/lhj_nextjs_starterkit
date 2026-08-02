@@ -2,7 +2,10 @@ import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 
-function HeroSection() {
+/**
+ * 홈페이지 히어로 섹션
+ */
+export const HeroSection: React.FC = () => {
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32">
       <div className="flex flex-col gap-6">
@@ -23,14 +26,15 @@ function HeroSection() {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-3">
-          <Link href="#components">
+          <Link href="#components" className="inline-block">
             <Button size="lg">컴포넌트 탐색</Button>
           </Link>
           <a
-            href="https://github.com"
+            href="https://github.com/shadcn-ui/shadcn-ui"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block"
+            aria-label="GitHub에서 프로젝트 보기 (새 탭에서 열림)"
           >
             <Button size="lg" variant="outline">
               GitHub에서 보기
@@ -41,5 +45,3 @@ function HeroSection() {
     </section>
   )
 }
-
-export { HeroSection }

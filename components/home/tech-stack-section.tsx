@@ -1,3 +1,4 @@
+import type { LucideIcon } from "lucide-react"
 import {
   Code2,
   Zap,
@@ -8,40 +9,56 @@ import {
 } from "lucide-react"
 import { Card } from "@/components/ui/card"
 
-const TECH_STACK_ITEMS = [
+interface TechStackItem {
+  id: string
+  icon: LucideIcon
+  title: string
+  description: string
+}
+
+const TECH_STACK_ITEMS: TechStackItem[] = [
   {
+    id: "nextjs",
     icon: Zap,
     title: "Next.js 16",
     description: "최신 App Router와 서버 컴포넌트로 빠른 성능을 보장합니다.",
   },
   {
+    id: "react",
     icon: Code2,
     title: "React 19",
     description: "최신 React의 모든 기능을 활용한 선진적인 개발 경험.",
   },
   {
+    id: "tailwind",
     icon: Palette,
     title: "Tailwind CSS v4",
     description: "CSS-first 디자인 토큰으로 일관된 스타일링 시스템.",
   },
   {
+    id: "shadcn",
     icon: Package,
     title: "shadcn/ui",
     description: "Base UI 기반의 재사용 가능한 고품질 컴포넌트.",
   },
   {
+    id: "typescript",
     icon: TypeIcon,
     title: "TypeScript",
     description: "완전한 타입 안정성으로 신뢰할 수 있는 코드.",
   },
   {
+    id: "darkmode",
     icon: Moon,
     title: "다크모드",
     description: "next-themes로 완벽하게 지원되는 라이트/다크 테마.",
   },
 ]
 
-function TechStackSection() {
+/**
+ * 기술 스택 섹션 - 프로젝트에 포함된 주요 기술 소개
+ */
+export const TechStackSection: React.FC = () => {
   return (
     <section
       id="tech-stack"
@@ -58,25 +75,18 @@ function TechStackSection() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {TECH_STACK_ITEMS.map((item) => {
-            const Icon = item.icon
-            return (
-              <Card
-                key={item.title}
-                className="p-6 flex flex-col gap-3 hover:shadow-md transition-shadow"
-              >
-                <Icon className="size-6 text-primary" />
-                <h3 className="font-semibold text-lg">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">
-                  {item.description}
-                </p>
-              </Card>
-            )
-          })}
+          {TECH_STACK_ITEMS.map(({ id, icon: Icon, title, description }) => (
+            <Card
+              key={id}
+              className="p-6 flex flex-col gap-3 hover:shadow-md transition-shadow"
+            >
+              <Icon className="size-6 text-primary" />
+              <h3 className="font-semibold text-lg">{title}</h3>
+              <p className="text-sm text-muted-foreground">{description}</p>
+            </Card>
+          ))}
         </div>
       </div>
     </section>
   )
 }
-
-export { TechStackSection }
