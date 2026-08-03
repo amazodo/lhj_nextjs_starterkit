@@ -26,7 +26,20 @@
       "WebFetch(domain:docs.claude.com)",
       "Bash(git commit -m '🔔 feat: Claude Code 훅 + 텔레그램 알림 통합 *)",
       "Bash(npx tsc *)",
-      "Bash(node .claude/hooks/typecheck.cjs)"
+      "Bash(node .claude/hooks/typecheck.cjs)",
+      "mcp__sequential-thinking__sequentialthinking",
+      "mcp__shadcn",
+      "Bash(npx shadcn-ui@latest *)",
+      "Bash(npx shadcn@latest *)",
+      "Bash(netstat -ano)",
+      "Bash(findstr :3000)",
+      "PowerShell(head -50)",
+      "PowerShell(git add -A)",
+      "PowerShell(git reset HEAD)",
+      "PowerShell(git add CLAUDE.md)",
+      "PowerShell(git add package.json package-lock.json)",
+      "PowerShell(git add components/home/hero-section.tsx app/login/page.tsx)",
+      "PowerShell(git add .claude/settings.local.json)"
     ]
   },
   "enableAllProjectMcpServers": true,
