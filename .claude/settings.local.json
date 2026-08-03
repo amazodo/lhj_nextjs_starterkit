@@ -24,7 +24,9 @@
       "WebSearch",
       "WebFetch(domain:core.telegram.org)",
       "WebFetch(domain:docs.claude.com)",
-      "Bash(git commit -m '🔔 feat: Claude Code 훅 + 텔레그램 알림 통합 *)"
+      "Bash(git commit -m '🔔 feat: Claude Code 훅 + 텔레그램 알림 통합 *)",
+      "Bash(npx tsc *)",
+      "Bash(node .claude/hooks/typecheck.cjs)"
     ]
   },
   "enableAllProjectMcpServers": true,
@@ -32,6 +34,17 @@
     "playwright"
   ],
   "hooks": {
+    "FileChanged": [
+      {
+        "matcher": "**/*.{ts,tsx}",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "npx -y tsc --noEmit"
+          }
+        ]
+      }
+    ],
     "Notification": [
       {
         "matcher": "permission_prompt",
