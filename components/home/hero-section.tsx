@@ -29,6 +29,11 @@ export const HeroSection: React.FC = () => {
           <Link href="#components" className="inline-block">
             <Button size="lg">컴포넌트 탐색</Button>
           </Link>
+          <Link href="/login" className="inline-block">
+            <Button size="lg" variant="outline">
+              로그인
+            </Button>
+          </Link>
           <a
             href="https://github.com/shadcn-ui/shadcn-ui"
             target="_blank"
